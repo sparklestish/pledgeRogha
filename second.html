@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script src="jquery1.7.2.js"></script>
+
+<script src="jquery-ui.js"></script>
+
+ <script src="jquery.ui.touch-punch.min.js"></script>
+
+ <!-- <script>
+
+ $(function() {
+
+
+  $('#canvas1').draggable({cursor: 'move', containment: '#canvas', stop: function() {
+
+        var cont = $('#canvas').offset();
+
+        var img = $(this).offset();
+
+        $('#xy').text('x-axis :' + (img.left - cont.left) + ', y-axis :' + (img.top -           cont.top));
+
+     }});
+
+   });
+
+
+</script> -->
+
+<style>
+
+/*#canvas {
+
+border:1px solid red;
+}*/
+</style>
+
+</head>
+
+<body>
+
+ <div id="canvas" style="overflow: hidden; height:400px; width:550px;"> 
+
+ <img id='widget' src='img/ba.jpg' name='image' >
+
+ </div>
+
+<div id='xy'></div>
+
+</body>
+<script>$('#widget').draggable();</script>
+</html>

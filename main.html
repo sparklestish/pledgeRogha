@@ -1,0 +1,135 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+
+<script type="text/javascript">
+
+
+ 
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) {
+        e.preventDefault(); 
+    navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
+    }, false );
+}
+ 
+function onConfirmExit(button) {
+    if(button==2){ //If User select a No, then return back;
+        return;
+    }else{
+        navigator.app.exitApp(); // If user select a Yes, quit from the app.
+    }
+}
+    </script>
+
+<script type="text/javascript">
+ document.addEventListener("deviceready",onDeviceReady,false);
+
+// Cordova is ready to be used!
+function onDeviceReady() {
+//alert('device is ready');
+  var permissions = cordova.plugins.permissions;
+
+
+
+
+
+
+
+
+permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
+ 
+function checkPermissionCallback(status) {
+  if(!status.hasPermission) {
+    var errorCallback = function() {
+      console.warn('Camera permission is not turned on');
+    }
+ 
+    permissions.requestPermission(
+      permissions.CAMERA,
+      function(status) {
+        if(!status.hasPermission) errorCallback();
+      },
+      errorCallback);
+  }
+
+  
+}
+
+
+
+permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback1, null);
+ 
+function checkPermissionCallback1(status) {
+  if(!status.hasPermission) {
+    var errorCallback = function() {
+      console.warn('Image Gallery permission is not turned on');
+    }
+ 
+    permissions.requestPermission(
+      permissions.WRITE_EXTERNAL_STORAGE,
+      function(status) {
+        if(!status.hasPermission) errorCallback();
+      },
+      errorCallback);
+  }
+
+  
+}
+     
+    // alert('Device Ready');
+     //window.location = "https://frame1.html";
+
+
+//cam();
+//hide();
+//show();
+}
+
+
+
+
+</script>
+
+<style type="text/css">a {text-decoration: none}</style>
+</head>
+<body >
+
+
+<div class="rows">
+
+
+
+ <img src="img/log.png" align="center" style="position: relative;left:30%" >
+
+
+
+<p style="height: 50px;"></p>
+<div class="rows">
+
+<div class="wrapper">
+  <a href="frame1.html"><div class="frame" style=""><img src="img/logo3.png" style="position: absolute;top:35%;left:30%">Camera</div></a>
+
+
+</div>
+
+
+
+<div class="wrapper">
+ <a href="frame2.html"><div class="frame" style=""> <img src="img/logo2.png" style="position: absolute;top: 35%;left:30%">Gallery</div></a>
+
+</div>
+
+
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>

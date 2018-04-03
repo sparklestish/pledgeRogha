@@ -1,0 +1,497 @@
+<html>
+  <head>
+  <style type="text/css">
+html, body {background: transparent;}
+ .header_bar{
+  width:100%;
+  height:55px;
+  background:transparent;
+  /*box-shadow:0 0 10px rgba(0,0,0,0.8);*/
+  position:fixed;
+  top:0;
+  z-index:100;
+  left:-0.4px;
+ }
+
+ .footer_bar{
+  width:100%;
+  height:50px;
+  background:#fff;
+  box-shadow:0 0 10px rgba(0,0,0,0.8);
+  position:fixed;
+  bottom:0;
+  z-index:100;
+  left:-0.4px;
+ }
+
+ .save_button{
+background:url(img/download-arrow.png) no-repeat;
+  position:absolute;
+ left:40%;
+  z-index:150;
+  width:35px;
+  height:35px;
+  float:left;
+font-weight:bold;
+margin-left:2%;
+ }
+
+ .share_button{
+background:url(img/share.png) no-repeat;
+  /*position:absolute;*/
+  /*left:90%;*/
+margin-top: -12%;
+margin-right: 5%;
+  z-index:150;
+  width:100%;
+  height:30px;
+  float:right;
+  font-weight:bold;
+ }
+
+ #smallImage{
+
+
+   
+
+/*
+    background-origin: border-box;
+   border: 10px solid transparent;
+    padding: 0px;
+    -webkit-border-image: url(img/bg.png) 30 stretch ; /* Safari 3.1-5
+ -o-border-image: url(img/bg.png) 30 stretch ; 
+  border-image: url(img/bg.png) 30 stretch ;
+*/
+   /*padding: 10px 0 30px 0;    
+    background-image: url("img/bg.png"), url('');
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+
+    display: block;*/
+ }
+
+
+
+ 
+
+     .download {
+      background: url(img/back.png) ;
+      width: 100%;
+      height: 36px;
+        float:left;
+        cursor:pointer;
+        color:#000;
+        padding:3px;
+     position: relative;top:10%;
+    }
+
+    
+
+.backy{
+   background: url(img/bg.png) ;
+    width: 100%;
+    height: 600px;
+   
+    background-size: 100% 100%;
+   /* border: 1px solid red;
+*/
+/*z-index: 1000;*/
+
+}
+.batty_button{
+    background:url(img/logo.png) no-repeat;
+    width:50px;
+    height:50px;
+    border:none;
+    cursor: pointer;
+    outline: none;
+    position:absolute;
+    left:45%;
+    top:16%;
+
+
+}
+
+
+.retake_button{
+    background:url(img/retake.png) no-repeat;
+    width:30px;
+    height:30px;
+    border:none;
+    cursor: pointer;
+    outline: none;
+    position:absolute;
+    left:20%;
+    top:18%;
+
+
+}
+
+.switch_button{
+    background:url(img/switch.png) no-repeat;
+    width:30px;
+    height:30px;
+    border:none;
+    cursor: pointer;
+    outline: none;
+    position:absolute;
+    left:75%;
+    top:18%;
+
+
+}
+
+
+
+.selecttodiv{
+    display: inline-block;
+    width:300px;
+    height: 3em;    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    overflow:hidden;
+}
+
+.selecttodiv option{
+  
+
+    height: 2.5em;
+    float:left;
+    margin-right: 20px;
+     display: inline-block !important;
+  width: 30px;
+  text-align: center;
+}
+
+*:focus {
+    outline: 0 !important;
+    text-decoration: none;
+}
+
+input[type=radio   ]:not(old){
+
+  box-sizing: border-box;
+  appearance: none;
+  background: white;
+  outline: 2px solid #ed3237;
+  border: 3px solid white;
+
+  width     : 60px;
+  height: 60px;
+  position: absolute;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+  z-index:1;
+  /*border-radius: :1px;*/
+ /* background: #000;*/
+  left:0;
+}
+
+input[type=radio]:checked {
+  background: #333;
+}
+
+/*input[type=radio]:checked ~ .check {
+  border: 5px solid #0DFF92;
+}
+
+input[type=radio]:checked ~ .check::before{
+  background: #0DFF92;
+}
+
+input[type=radio]:checked ~ label{
+  color: #0DFF92;
+}*/
+
+ </style>
+    <meta charset="utf-8" />
+   <!--  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+ <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+  <link href="1/thumbnail-slider.css" rel="stylesheet" type="text/css" />
+ <script src="1/thumbnail-slider.js" type="text/javascript"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
+    <script type="text/javascript">
+ 
+
+
+ document.addEventListener("deviceready",onDeviceReady,false);
+
+// Cordova is ready to be used!
+function onDeviceReady() {
+    var canvas2ImagePlugin = window.plugins.canvas2ImagePlugin;
+
+/*  var permissions = cordova.plugins.permissions;
+permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
+ 
+function checkPermissionCallback(status) {
+  if(!status.hasPermission) {
+    var errorCallback = function() {
+      console.warn('Camera permission is not turned on');
+    }
+ 
+    permissions.requestPermission(
+      permissions.CAMERA,
+      function(status) {
+        if(!status.hasPermission) errorCallback();
+      },
+      errorCallback);
+  }
+
+  
+}*/
+     
+    // alert('Device Ready');
+     //window.location = "https://frame1.html";
+
+cam();
+
+//hide();
+//show();
+}
+
+
+
+/*cam();
+*/
+
+
+var tapEnabled = true; //enable tap take picture
+var dragEnabled = true; //enable preview box drag across the screen
+var toBack = true; //send preview box to the back of the webview
+
+var rect = {x: 0, y: 0, width: 450, height: 550};
+//var rect = {x: 0, y: 0, width: window.innerWidth, height: window.innerHeight};
+function cam(){
+  //wind.location="frame1.html";
+cordova.plugins.camerapreview.startCamera(rect, "front", tapEnabled, dragEnabled, toBack);}
+
+
+function show(){
+  cordova.plugins.camerapreview.show();}
+
+
+
+ function  takePicture(){
+  cordova.plugins.camerapreview.takePicture({maxWidth:400, maxHeight:400});
+
+  cordova.plugins.camerapreview.setOnPictureTakenHandler(function(result){
+  document.getElementById('originalPicture').src = result[0];//originalPicturePath;
+  document.getElementById('previewPicture').src = result[1];//previewPicturePath;
+});
+
+
+  }
+
+ 
+
+
+
+
+ 
+
+   function hide(){
+    cordova.plugins.camerapreview.hide();}
+
+function switcher(){
+  cordova.plugins.camerapreview.switchCamera();
+}
+
+ function   colorEffectChanged(obj){
+
+  //alert('my value is now: ' + obj.value);
+
+    //var effect = document.getElementById('colorEffectCombo').value=this.value;
+    var effect = obj.value;
+
+    //alert(effect);
+    cordova.plugins.camerapreview.setColorEffect(effect);}
+
+
+
+ function to_image(){
+                //var canvas = document.getElementById("thecanvas");
+                document.getElementById("theimage").src = canvas.toDataURL();
+                Canvas2Image.saveAsPNG(canvas);
+            }
+
+
+  function showImage(){
+        document.getElementById('previewPicture').style.visibility='visible';
+    }
+
+
+
+    
+     function mySavingFunction(canvas) {
+
+       /*canvas2ImagePlugin.saveImageDataToLibrary(
+        function(msg){
+           alert('The image was saved to the photos gallery on your device.', 'The image was saved to the photos gallery on your device.');
+        }, 
+        function(err){
+            alert('Aww, Schucks!', 'There was a problem saving the image to your device.');
+        }, 
+         document.getElementById('canvas')
+    );*/
+ canvas2ImagePlugin.saveImageDataToLibrary(
+        function(msg){
+           // alert('The image was saved to the photos gallery on your device.', 'The image was saved to the photos gallery on your device.');
+        }, 
+        function(err){
+            //alert('Aww, Schucks!', 'There was a problem saving the image to your device.');
+        }, 
+       document.getElementById('canvas'),
+       '.jpg',
+       90,
+   'cunvaspluginfolder' //folder name
+    );
+}
+   
+
+    </script>
+  </head>
+  <body>
+  <div class="header_bar">
+ 
+  <!--  <a href="index.html" style="position: absolute;top:10px;left: 10px" ><img src="img/back.png"></a> -->   
+    
+    <a id="sharer" onclick="saveit();mySavingFunction();window.plugins.socialsharing.share('#iPledgeGH.', 'IpledgeGH', canvas.toDataURL(), null)"  style="position: absolute;top:10px;right:10px" ><img src="img/share.png"></a> 
+  </div>
+<p style="position:fixed;z-index:6;text-align: center;color:#fff;font-weight: bold;top:65%;font-size: 24px;left:0;background: #000;width:100%;height: 80px;"><span id="demo" style="text-align: center;"></span></p>
+<p style="float: left;background: #000"> <textarea type="text" id="fname" placeholder="What's Your Pledge?" onkeyup="myFunction()" onKeydown="func()" style="    outline:none;width:80%;position: absolute;top:70%;z-index:6;height: 50px;background:transparent;color:transparent;border: none;border-bottom: #fff 1px solid;text-align: center;left:5%;text-decoration: none;"></textarea></p>
+    <img id="mainframe" src="img/frame.png" style="width:100%;height:auto;z-index:2;position: fixed;left: 0;top:0" >
+    <img id="previewPicture"  width="450" height="550"  style="width:400px;height:550px;z-index: -1;position: fixed;left: 0;top:0;border:none;visibility:hidden;" /> 
+ <!-- <img id="previewPicture"  width="400" height="400"  style="width:400px;height:400px;z-index: -1;position: fixed;left: 0;margin-top: 13%;border:none;visibility:hidden;" />  -->
+   
+
+<canvas id="canvas" width="450px" height="550px">
+</canvas>
+
+<div class="controls" style="background: #000;width: 100%;height:100%;position: fixed;left:0;margin-top: 120%">
+
+     <!--  <div class="block">
+        <button id="startCameraButton">Start Camera at back</button>
+        <button id="stopCameraButton">Stop Camera</button>
+      </div> -->
+
+
+      <div class="">
+        <!-- <p><button id="startCameraAnotherPosButton">Start Camera at front</button></p> -->
+
+       <!--  <p >Filters :
+        <select  size="13" id="colorEffectCombo" onchange="colorEffectChanged();">
+          <option selected value="none">None</option>
+          <option value="aqua">Aqua</option>
+          <option value="blackboard">Blackboard</option>
+          <option value="mono">Mono</option>
+          <option value="negative">Negative</option>
+          <option value="posterize">Posterize</option>
+          <option value="sepia">Sepia</option>
+          <option value="solarize">Solarize</option>
+          <option value="whiteboard">Whiteboard</option>
+        </select>
+        </p>  -->
+<!-- <table id="checkbox_div"><tr><td> 
+ <ul>
+<li><input type="radio"  name="theme" value="theme1" id="colorEffectCombo" onchange ="colorEffectChanged(this)" />Theme1</li>
+<li><input type="radio"  name="theme" value="theme2" id="colorEffectCombo" onchange="colorEffectChanged(this)" />Theme2</li>
+<ul>
+<li><input type="checkbox"  name="view1" />Tags</li>            
+</ul>
+<li><input type="radio"  name="theme" value="theme3"/>Theme3</li>
+<li><input type="radio"  name="theme" value="theme4"/>Theme4</li>
+</ul>
+   </td></tr> </table>
+ -->
+      
+
+      </div>
+      <p></p>
+      <div class="">
+       <a href="frame1.html" class="retake_button" ></a> 
+       <button id="something" class="batty_button" onclick="takePicture();showImage()"></button>
+        <button  class="switch_button" onclick="switcher();"></button>  
+       <!--  <button id="takePictureButton">Take Picture</button>
+        <button id="switchCameraButton">Switch Camera</button> -->
+      </div>
+     <!--  <div class=""> -->
+        <!-- <button id="hideButton">Hide</button> -->
+        <!-- <button id="showButton" onclick="show();">Show</button> -->
+      <!--   <button id="button" onclick="showhide();">TAke photo Again</button> -->
+      <!-- </div> -->
+    </div>
+    <div class="pictures">
+    <!--   <p><img id="previewPicture" width="400" height="400" /></p> -->
+      <p><img id="originalPicture" width="200" style="display: none" /></p>
+    </div>
+<script>
+function myFunction() {
+    var x = document.getElementById("fname").value;
+    document.getElementById("demo").innerHTML = x;
+   //var pledge =   document.getElementById("demo").innerHTML = x;
+}
+
+
+
+function func(){
+var e=document.getElementById("fname"),canvas=document.getElementById("canvas"),n=canvas.getContext("2d");
+n.fillStyle="#fff";n.font="30px futura";n.textBaseline="top";n.fillText(e.value,20,400);
+
+}
+
+  var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var smallImage = document.getElementById('previewPicture');
+var bamilo = document.getElementById('mainframe');
+
+canvas.style.display="none";
+//canvas.style.border="1px solid #fff";
+ /*canvas.style.left = "0px";
+        canvas.style.top = "-5px";
+        canvas.style.position = "absolute";*/
+/*canvas.width='400px';
+canvas.height='600px';*/
+
+
+// Trigger photo take
+function saveit(){
+   /* context.drawImage(smallImage, 0, 0, 720, 1024);*/
+    context.drawImage(smallImage, 0, 0,450,550);
+   // context.globalAlpha = 0.5;
+       /* context.drawImage(bamilo, 0, 0, 720, 680);*/
+     context.drawImage(bamilo, 0, 0, 400, 550 );
+     func();
+
+
+
+
+}
+
+
+
+
+   
+
+
+     function showhide()
+     {
+           var div = document.getElementById("previewPicture");
+    if (div.style.display !== "none") {
+        div.style.display = "none";
+    }
+    else {
+        div.style.display = "block";
+    }
+     }
+
+     //showhide();
+  </script>
+   <!--  <script type="text/javascript" src="cordova.js"></script> -->
+<!--     <script type="text/javascript" src="js/index.js"></script> -->
+     <script type="text/javascript" src="CameraPreview.js"></script> 
+  </body>
+</html>
