@@ -13,17 +13,17 @@
     <content src="index.html" />
     <preference name="permissions" value="none" />
    <!--  <plugin name="cordova-plugin-whitelist" spec="^1.3.3" /> -->
-    <gap:plugin name="org.apache.cordova.camera" />
-    <gap:plugin name="org.apache.cordova.media-capture" />
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.file-transfer" />
-    <gap:plugin name="org.apache.cordova.media" />
-    <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.storage" />
+    <gap:plugin name="cordova-plugin-camera" />
+    <gap:plugin name="cordova.media-capture" />
+    <gap:plugin name="cordova.device" />
+    <gap:plugin name="cordova.file" />
+    <gap:plugin name="cordova.file-transfer" />
+    <gap:plugin name="cordova.media" />
+    <gap:plugin name="cordova.network-information" />
+    <gap:plugin name="cordova.storage" />
 
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-     
+
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
